@@ -34,6 +34,7 @@
     wget
     git
     gh
+    usbutils
   ];
 
   # Enable networking

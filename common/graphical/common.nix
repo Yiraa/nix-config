@@ -3,7 +3,6 @@
   imports = [
     ./firefox.nix
     ./fonts.nix
-    ./steam.nix
   ];
 
   environment.systemPackages = with pkgs; [

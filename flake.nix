@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "NixOS config";
 
   inputs = {
     # Nixpkgs
@@ -28,27 +28,13 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       nixos-dell = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
         modules = [
           ./hosts/nixos-dell
         ];
       };
     };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    #homeConfigurations = {
-    #  "yiraa@nixos-dell" = home-manager.lib.homeManagerConfiguration {
-    #    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-    #    extraSpecialArgs = {inherit inputs outputs;};
-    #    # > Our main home-manager configuration file <
-    #    modules = [./home-manager/home.nix];
-    #  };
-    #};
   };
 }

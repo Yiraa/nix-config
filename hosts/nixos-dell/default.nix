@@ -16,6 +16,8 @@
     ./hardware-configuration.nix
     ../../common/common.nix
     ../../common/graphical/common.nix
+
+    ../../modules/steam.nix
   ];
 
   networking.hostName = "nixos-dell";

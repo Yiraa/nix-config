@@ -61,10 +61,16 @@
     direnv = {
       enable = true;
       enableBashIntegration = true; # see note on other shells below
+      enableZshIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
     };
+  };
 
-    bash.enable = true; # see note on other shells below
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
   };
 
   #programs.plasma = {

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, inputs, outputs, ... }:
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yiraa = {
@@ -19,4 +19,7 @@
       yiraa = import ../home-manager/home.nix;
     };
   };
+
+  users.defaultUserShell = pkgs.zsh;
+
 }

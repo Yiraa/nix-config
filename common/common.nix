@@ -2,6 +2,7 @@
 {
   imports = [
     ./lang.nix
+    ./user.nix
   ];
 
   nixpkgs = {
@@ -30,12 +31,20 @@
   };
 
   environment.systemPackages = with pkgs; [
+    zsh
     vim
     wget
     git
     gh
     usbutils
   ];
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+    };
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -53,15 +62,5 @@
     };
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.yiraa = {
-    initialPassword = "test";
-    isNormalUser = true;
-    description = "Yiraa";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      inputs.home-manager.packages.${pkgs.system}.default
-      kdePackages.kate
-    ];
-  };
+  programs.zsh.enable = true;
 }

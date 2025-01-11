@@ -34,6 +34,7 @@
     git
     gh
     usbutils
+    nil
   ];
 
   programs.starship = {

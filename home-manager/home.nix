@@ -12,9 +12,9 @@
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
     inputs.plasma-manager.homeManagerModules.plasma-manager
+    inputs.nvf.homeManagerModules.default
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+     ./nvim.nix
   ];
 
   nixpkgs = {
@@ -71,6 +71,19 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+  };
+
+  programs.nvf = {
+    enable = true;
+    # your settings need to go into the settings attribute set
+    # most settings are documented in the appendix
+    settings = {
+      vim.viAlias = false;
+      vim.vimAlias = true;
+      vim.lsp = {
+        enable = true;
+      };
+    };
   };
 
   #programs.plasma = {

@@ -33,6 +33,7 @@
     vim
     wget
     git
+    gh
   ];
 
   # Enable networking

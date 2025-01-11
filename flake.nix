@@ -9,6 +9,8 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     # Hardware specific
     hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -45,6 +47,12 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/nixos-dell
+        ];
+      };
+      nixos-wsl = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/nixos-wsl
         ];
       };
     };

@@ -37,12 +37,12 @@
     nil
   ];
 
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-    };
-  };
+  #programs.starship = {
+  #  enable = true;
+  #  settings = {
+  #    add_newline = false;
+  #  };
+  #};
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -60,5 +60,11 @@
     };
   };
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      theme = "lambda";
+    };
+  };
 }

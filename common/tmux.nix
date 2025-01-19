@@ -10,6 +10,7 @@
     ];
     extraConfig = ''
       set -g mouse on
+      set -s escape-time 0
       set -ag terminal-overrides ",xterm-256color:RGB"
 
       # don't do anything when a 'bell' rings
@@ -51,6 +52,20 @@
 
       # messages
       set -g message-style 'fg=yellow bg=red bold'
+
+      set -g base-index 1
+
+      # keybindings
+      unbind-key C-f
+      unbind-key C-a
+      unbind-key C-z
+      unbind-key C-e
+      unbind-key C-r
+      bind-key -r -n C-f run-shell "tmux neww tms"
+      bind-key C-a select-window -t 1
+      bind-key C-z select-window -t 2
+      bind-key C-e select-window -t 3
+      bind-key C-r select-window -t 4
     '';
   };
 }

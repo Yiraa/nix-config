@@ -14,7 +14,7 @@
     inputs.plasma-manager.homeManagerModules.plasma-manager
     inputs.nvf.homeManagerModules.default
 
-     ./nvim.nix
+    ./nvim.nix
   ];
 
   nixpkgs = {
@@ -42,6 +42,7 @@
   home = {
     username = "yiraa";
     homeDirectory = "/home/yiraa";
+    file.".config/nvim/".source = ../config/nvim;
   };
 
   # Add stuff for your user as you see fit:

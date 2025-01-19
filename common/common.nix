@@ -38,6 +38,7 @@
     nil
     ripgrep
     fzf
+    tmux-sessionizer
   ];
 
   #programs.starship = {
@@ -65,6 +66,9 @@
 
   programs.zsh = {
     enable = true;
+    interactiveShellInit = ''
+      [ -z "$TMUX" ] && exec tmux
+    '';
     ohMyZsh = {
       enable = true;
       theme = "cypher";

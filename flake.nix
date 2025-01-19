@@ -21,6 +21,8 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";

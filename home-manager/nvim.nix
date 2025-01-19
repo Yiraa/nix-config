@@ -13,6 +13,7 @@
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
@@ -23,6 +24,10 @@
       telescope-fzf-native-nvim
       plenary-nvim
       telescope-ui-select-nvim
+      lazydev-nvim
+      nvim-lspconfig
+      harpoon
+      undotree
     ];
   };
 }

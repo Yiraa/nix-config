@@ -13,6 +13,8 @@
       set -s escape-time 0
       set -ag terminal-overrides ",xterm-256color:RGB"
 
+      setw -g mode-keys vi
+
       # don't do anything when a 'bell' rings
       set -g visual-activity off
       set -g visual-bell off
@@ -56,6 +58,7 @@
       set -g base-index 1
 
       # keybindings
+      unbind-key C-v
       unbind-key C-f
       unbind-key C-a
       unbind-key C-z

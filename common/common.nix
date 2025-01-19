@@ -3,6 +3,7 @@
   imports = [
     ./lang.nix
     ./user.nix
+    ./tmux.nix
   ];
 
   nixpkgs = {
@@ -35,6 +36,8 @@
     gh
     usbutils
     nil
+    ripgrep
+    fzf
   ];
 
   #programs.starship = {
@@ -64,7 +67,7 @@
     enable = true;
     ohMyZsh = {
       enable = true;
-      theme = "lambda";
+      theme = "cypher";
     };
   };
 }

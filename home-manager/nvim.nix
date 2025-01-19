@@ -16,17 +16,32 @@
     # your settings need to go into the settings attribute set
     # most settings are documented in the appendix
     settings = {
-      vim.viAlias = false;
+      vim.viAlias = true;
       vim.vimAlias = true;
+
+      vim.globals = {
+        mapleader = " ";
+        maplocalleader = " ";
+      };
+
+      vim.lineNumberMode = "relNumber";
+      vim.undoFile.enable = true;
+      vim.options.updatetime = 250;
+      vim.options.tm = 300;
+
       vim.lsp = {
         enable = true;
       };
       vim.languages.rust.enable = true;
       vim.languages.rust.lsp.enable = true;
+      vim.languages.nix.enable = true;
+      vim.languages.enableLSP = true;
+      vim.languages.enableTreesitter = true;
 
       vim.theme = {
         enable = true;
         name = "base16";
+        style = "dark";
         transparent = false;
         base16-colors = with config.scheme.withHashtag; {
           base00 = base00;

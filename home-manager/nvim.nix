@@ -28,6 +28,7 @@
       nvim-lspconfig
       harpoon
       undotree
+      indent-blankline-nvim
     ];
   };
 }

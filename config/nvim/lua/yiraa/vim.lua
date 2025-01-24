@@ -4,7 +4,12 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.cmd [[colorscheme dracula]]
+-- vim.cmd [[colorscheme zenbones]]
+vim.o.termguicolors = true
+vim.opt.background = "light"
+vim.cmd.colorscheme("one")
+
+vim.o.guicursor = "n-v-c:block,i:block"
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -53,7 +58,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', space = '·', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'

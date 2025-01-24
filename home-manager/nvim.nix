@@ -29,6 +29,10 @@
       harpoon
       undotree
       indent-blankline-nvim
+      zenbones-nvim
+      lush-nvim
+      nerdtree
+      vim-one
     ];
   };
 }

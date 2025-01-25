@@ -22,6 +22,13 @@
 
   networking.hostName = "nixos-dell";
 
+  boot.supportedFilesystems = [ "ntfs" ];
+  fileSystems."/mnt/windows" = {
+    device = "/dev/nvme0n1p3";
+    fsType = "ntfs-3g";
+    options = [ "rw" "uid=1000"];
+  };
+
   boot.loader = {
     systemd-boot = {
       enable = true;

@@ -39,6 +39,7 @@
     ripgrep
     fzf
     tmux-sessionizer
+    neofetch
   ];
 
   #programs.starship = {

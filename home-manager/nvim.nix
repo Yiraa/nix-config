@@ -33,6 +33,7 @@
       lush-nvim
       nerdtree
       vim-one
+      cyberdream-nvim
     ];
   };
 }

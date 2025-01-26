@@ -9,6 +9,7 @@
     jetbrains.rust-rover
     zed-editor
     spotify
+    alacritty
   ];
 
   # Enable the X11 windowing system.

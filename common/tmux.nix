@@ -3,7 +3,7 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     shortcut = "a";
     plugins = with pkgs.tmuxPlugins; [
       sessionist
@@ -11,7 +11,9 @@
     extraConfig = ''
       set -g mouse on
       set -s escape-time 0
-      set -ag terminal-overrides ",xterm-256color:RGB"
+      # set -ag terminal-overrides ",xterm-256color:RGB"
+      set -g default-terminal 'tmux-256color'
+      set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 
       setw -g mode-keys vi
 

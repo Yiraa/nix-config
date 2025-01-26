@@ -4,11 +4,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- vim.cmd [[colorscheme zenbones]]
-vim.o.termguicolors = true
-vim.opt.background = "light"
-vim.cmd.colorscheme("one")
-
 vim.o.guicursor = "n-v-c:block,i:block"
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
@@ -118,10 +113,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+
+-- Keep window centered
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- Move lines and reindent
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Search word on cursor and replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

@@ -10,6 +10,7 @@
     zed-editor
     spotify
     alacritty
+    parsec-bin
   ];
 
   # Enable the X11 windowing system.
@@ -28,6 +29,19 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+    services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  services.printing.drivers = [
+    pkgs.gutenprint
+    pkgs.gutenprintBin
+    pkgs.utsushi
+    pkgs.epson-escpr
+    pkgs.epson-escpr2
+  ];
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;

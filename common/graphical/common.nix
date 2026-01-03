@@ -14,6 +14,7 @@
     zsa-udev-rules
     keymapp
     blender
+    gimp
   ];
 
   # Enable the X11 windowing system.

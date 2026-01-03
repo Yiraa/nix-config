@@ -11,6 +11,8 @@
     spotify
     alacritty
     parsec-bin
+    zsa-udev-rules
+    keymapp
   ];
 
   # Enable the X11 windowing system.

@@ -13,6 +13,7 @@
     parsec-bin
     zsa-udev-rules
     keymapp
+    blender
   ];
 
   # Enable the X11 windowing system.

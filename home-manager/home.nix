@@ -54,8 +54,8 @@
 
   programs.git = {
     enable = true;
-    userName  = "Yiraa";
-    userEmail = "valentin.c.moi@gmail.com";
+    settings.user.name  = "Yiraa";
+    settings.user.email = "valentin.c.moi@gmail.com";
   };
 
   programs = {

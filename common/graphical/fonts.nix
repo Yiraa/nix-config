@@ -1,7 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts.fira-code
     libertine
     noto-fonts
   ];

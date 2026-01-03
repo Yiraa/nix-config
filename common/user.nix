@@ -7,7 +7,7 @@
     description = "Yiraa";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      inputs.home-manager.packages.${pkgs.system}.default
+      inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
       kdePackages.kate
     ];
   };

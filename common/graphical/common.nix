@@ -15,6 +15,7 @@
     keymapp
     blender
     gimp
+    cura
   ];
 
   # Enable the X11 windowing system.

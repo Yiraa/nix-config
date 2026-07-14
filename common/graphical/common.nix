@@ -1,4 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
 {
   imports = [
     ./firefox.nix
@@ -33,7 +39,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-    services.avahi = {
+  services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
@@ -46,6 +52,17 @@
     pkgs.epson-escpr
     pkgs.epson-escpr2
   ];
+
+  # hardware.pulseaudio.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

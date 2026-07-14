@@ -1,9 +1,15 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
 {
   # Install firefox.
   programs.firefox = {
     enable = true;
-    languagePacks = ["fr"];
+    languagePacks = [ "fr" ];
     preferences = {
       "intl.accept_languages" = "fr, fr-fr, en-us, en";
       "intl.locale.requested" = "fr";
@@ -11,11 +17,21 @@
     };
     policies = {
       DisplayBookmarksToolbar = "always";
+      FirefoxHome = {
+        SponsoredStories = false;
+        Stories = false;
+      };
       ExtensionSettings = {
         "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
+          private_browsing = true;
+        };
+        "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}/latest.xpi";
+          installation_mode = "force_installed";
+          private_browsing = true;
         };
       };
     };
